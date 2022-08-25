@@ -69,7 +69,6 @@ const Listaprodotti = () => {
   });
             */
         })();
-
         return () => {
             // this now gets called when the component unmounts
         };

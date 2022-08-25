@@ -170,7 +170,7 @@ const chiamacercanome= ()=>{
                         </div>
                     </div>
 
-                    <div class="input-group mb-2">
+                    <div className="input-group mb-2">
                         <span className="input-group-text" style={{backgroundColor:'transparent', border:'none', color:'white'}}>stagione</span>
                         <div className="input-group-append">
                                 <button className="btn btn-secondary dropdown-toggle" style={{borderRadius: '4px 4px 4px 4px'}} type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -186,7 +186,7 @@ const chiamacercanome= ()=>{
                                 </div>
                         </div>
                     </div>
-                    <div class="input-group mb-2">
+                    <div className="input-group mb-2">
                         <span className="input-group-text" style={{backgroundColor:'transparent', border:'none', color:'white'}}>categoria</span>
                         <div className="input-group-append">
                                 <button className="btn btn-secondary dropdown-toggle" style={{borderRadius: '4px 4px 4px 4px'}} type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -202,7 +202,7 @@ const chiamacercanome= ()=>{
                                 </div>
                         </div>
                     </div>
-                    <div class="input-group mb-2">
+                    <div className="input-group mb-2">
                         <span className="input-group-text" style={{backgroundColor:'transparent', border:'none', color:'white'}}>unità di misura</span>
                         <div className="input-group-append">
                                 <button className="btn btn-secondary dropdown-toggle" style={{borderRadius: '4px 4px 4px 4px'}} type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

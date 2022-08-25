@@ -115,16 +115,16 @@ const Ordinazione = ({ element }) => {
                 {/*<td>{element._id}</td>*/}
                 <td>{element.username}</td>
                 <td>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div className="dropdown">
+                        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             vedi
                         </button>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                            <font class="dropdown-item disabled">nome - quantità </font>
+                        <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            <font className="dropdown-item disabled">nome - quantità </font>
                             {
                             element.lista.map((elem) => {
                                 const testo=elem.nome+ ' - '+ elem.quantita;
-                                return <font class="dropdown-item disabled">{testo} </font>
+                                return <font key={element._id+''+elem} className="dropdown-item disabled">{testo} </font>
                             })}
                         </div>
 

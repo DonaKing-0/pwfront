@@ -41,13 +41,16 @@ const Altro = ({setlog}) => {
             setUsername('');
             setErr(false);
             setMsg('');
+            //console.log(res.data.token)
 
             sessionStorage.setItem('token', 'Bearer '+res.data.token)
             //console.log(sessionStorage.getItem('token'));
-
+            axios.defaults.headers.common['Authorization'] = sessionStorage.getItem('token');
+//aggiorna in axios??
             setlog(false);
         }
     }catch(e){
+        //console.log(sessionStorage.getItem('token'));
         console.log(e);
             setMsg('Credenziali non valide');
             setErr(true);
