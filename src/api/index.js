@@ -18,7 +18,7 @@ axios.get('/user', {
 ///togli!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ///
 sessionStorage.setItem('token', process.env.REACT_APP_BEARER)
-console.log(sessionStorage.getItem('token'));
+//console.log(sessionStorage.getItem('token'));
 
 const getProdotti= async ()=>{
     
