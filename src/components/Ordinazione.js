@@ -4,8 +4,6 @@ import axios from "../api/axios.js"
 
 import { BsFillPencilFill, BsXCircleFill, BsFillCheckSquareFill, BsFillSquareFill, BsCheckLg} from "react-icons/bs";
 
-const sfondo='#fff2e6';
-
 const stile={ color: '#5bc0de', backgroundColor: "transparent", border: '0px', padding: '0px'}
 
 const Ordinazione = ({ element }) => {

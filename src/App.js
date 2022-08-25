@@ -16,8 +16,8 @@ function App() {
   return (
     <div className="App">
 
-      {/*log && <Login setlog={setlog}></Login>*/}
-      {/*!log && */<Pagina></Pagina>}
+      {log && <Login setlog={setlog}></Login>}
+      {!log && <Pagina></Pagina>}
       
     </div>
   );
