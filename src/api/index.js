@@ -1,23 +1,20 @@
 import axios from "./axios.js"
-
 /*
 axios.get('/user', {
     params: {
       ID: 12345
     }
   })
-
   .post('/user', {
     firstName: 'Fred',
     lastName: 'Flintstone'
   })
 */
 
-
 ///
 ///togli!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ///
-sessionStorage.setItem('token', process.env.REACT_APP_BEARER)
+//sessionStorage.setItem('token', process.env.REACT_APP_BEARER)
 //console.log(sessionStorage.getItem('token'));
 
 const getProdotti= async ()=>{

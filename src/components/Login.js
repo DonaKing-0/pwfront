@@ -43,7 +43,7 @@ const Altro = ({setlog}) => {
             setMsg('');
 
             sessionStorage.setItem('token', 'Bearer '+res.data.token)
-            console.log(sessionStorage.getItem('token'));
+            //console.log(sessionStorage.getItem('token'));
 
             setlog(false);
         }
