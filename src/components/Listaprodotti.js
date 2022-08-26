@@ -358,6 +358,56 @@ const Listaprodotti = () => {
         }
     }
 
+    function az( a, b ) {
+        if ( a.nome < b.nome ){
+          return -1;
+        }
+        if ( a.nome > b.nome ){
+          return 1;
+        }
+        return 0;
+    }
+
+    function prezz( a, b ) {
+        if ( a.prezzo < b.prezzo ){
+          return -1;
+        }
+        if ( a.prezzo > b.prezzo ){
+          return 1;
+        }
+        return 0;
+      }
+
+    const ordina= (ord)=>{
+        console.log('ordinamento')
+        let o=[...list];//spread
+
+        if(ord=='a-z'){
+            o=o.sort( az );
+        }
+        if(ord=='z-a'){
+            o=o.sort( az );
+            o=o.reverse();
+        }
+        if(ord=='crescente'){
+            o=o.sort( prezz );
+        }
+        if(ord=='decrescente'){
+            o=o.sort( prezz );
+            o=o.reverse();
+        }
+        
+        if(o){
+            console.log(o);
+
+            setList(o);
+            console.log(list)
+            SetVuota(false);
+        }else{
+            SetVuota(true);
+        }
+    }
+
 //quando clicco sul nero reset!!!!  --> ok fatto no!!!!! anche la card cancella
 
 //ogni volta che c'è map controlla no [] altrim schermo bianco
@@ -374,7 +424,7 @@ const Listaprodotti = () => {
             
             </div>
             <div className="collapse" id="collapseExample">
-                <Filtri cercanome={cercanome} cercafiltri={cercafiltri} stag={sta} cate={cat} unit={uni}></Filtri>
+                <Filtri cercanome={cercanome} cercafiltri={cercafiltri} ordina={ordina} stag={sta} cate={cat} unit={uni}></Filtri>
             </div>
 
             {vuota && 'Nessun prodotto'}

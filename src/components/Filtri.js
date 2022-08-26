@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { BsFillCheckSquareFill, BsFillSquareFill, BsCheckLg} from "react-icons/bs";
 
-const Listaprodotti = ({cercanome, cercafiltri, stag, cate, unit}) => {
+const Listaprodotti = ({cercanome, cercafiltri, ordina, stag, cate, unit}) => {
 
     const [min, setMin] = useState(0);
     const [max, setMax] = useState(0);
@@ -15,6 +15,8 @@ const Listaprodotti = ({cercanome, cercafiltri, stag, cate, unit}) => {
 
     const [seldisp, setSeldisp] = useState(false);
     const [seloff, setSeloff] = useState(false);
+
+    const [ordin, setOrdin] = useState('seleziona');
 
     const aggiornamin = (event) => {
         //togli gli 0 davanti e se <0 metti 0
@@ -83,11 +85,13 @@ const Listaprodotti = ({cercanome, cercafiltri, stag, cate, unit}) => {
         setCatsele('seleziona');
         setStasele('seleziona');
         setUnisele('seleziona');
+        setOrdin('seleziona');
     }
 
 const chiamacercanome= ()=>{
     cercanome(cerca);
     setCerca('');
+    setOrdin('seleziona')
     }
 
     const seldispo=()=>{
@@ -130,6 +134,14 @@ const chiamacercanome= ()=>{
         reset();
     }
 
+const ordine = (ordine) => {
+    //setodine
+    setOrdin(ordine);
+    //chiama l'altra
+    ordina(ordine);
+}
+
+
 //quando clicco sul nero reset!!!!  --> ok fatto no!!!!! anche la card cancella
 
 //ogni volta che c'è map controlla no [] altrim schermo bianco
@@ -137,7 +149,7 @@ const chiamacercanome= ()=>{
 
     return (<div className="card card-body" style={{backgroundColor: '#282c34', borderColor: '#fff2e6'}}>
                     <div className="input-group">
-                        <input className="form-control" style={{'borderRadius': '4px 4px 4px 4px', maxWidth:'500px'}} type="text" placeholder="cerca nome" aria-label="Search" onChange={aggiornacerca}></input>
+                        <input className="form-control" style={{'borderRadius': '4px 4px 4px 4px', maxWidth:'500px'}} type="text" placeholder="cerca nome" aria-label="Search" onChange={aggiornacerca} value={cerca}></input>
                         <button className="btn btn-outline-success" style={{marginLeft: '5px'}} onClick={chiamacercanome}>Cerca</button>
                     </div>
                         <hr style={{backgroundColor: '#fff2e6'}}></hr>
@@ -218,10 +230,25 @@ const chiamacercanome= ()=>{
                                 </div>
                         </div>
                     </div>
-
                 </div>
 
                 <button className="btn btn-outline-success" style={{marginLeft: '5px'}} onClick={chiamacercafiltri}>Cerca</button>
+                
+                <hr style={{backgroundColor: '#fff2e6'}}></hr>
+                <div className="input-group">
+                        <span className="input-group-text" style={{backgroundColor:'transparent', border:'none', color:'white'}}>ordine</span>
+                        <div className="input-group-append">
+                                <button className="btn btn-secondary dropdown-toggle" style={{borderRadius: '4px 4px 4px 4px'}} type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {ordin}
+                                </button>
+                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <button className="dropdown-item" onClick={()=>{ordine('a-z')}}>a-z</button>
+                                    <button className="dropdown-item" onClick={()=>{ordine('z-a')}}>z-a</button>
+                                    <button className="dropdown-item" onClick={()=>{ordine('crescente')}}>prezzo crescente</button>
+                                    <button className="dropdown-item" onClick={()=>{ordine('decrescente')}}>prezzo decrescente</button>
+                                </div>
+                        </div>
+                    </div>
             </div>
     )
 };
