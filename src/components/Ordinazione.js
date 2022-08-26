@@ -30,6 +30,7 @@ const Ordinazione = ({ element }) => {
                  console.log(res);
                     if(res.data.ritirato!=undefined){//risposta corretta
                         setRitirato(false);
+                        element.ritirato=false;
                         console.log(ritirato);
                     }
              }catch(e){
@@ -48,6 +49,7 @@ const Ordinazione = ({ element }) => {
                     if(res.data.ritirato!=undefined){//risposta corretta
                         //se sono false cosi non va
                         setRitirato(true);
+                        element.ritirato=true;
                         console.log(ritirato);
                     }
              }catch(e){
@@ -70,6 +72,7 @@ const Ordinazione = ({ element }) => {
                  console.log(res);
                     if(res.data.ritirato!=undefined){//risposta corretta
                         setPronto(false);
+                        element.pronto=false;
                         console.log(pronto);
                     }
              }catch(e){
@@ -87,6 +90,7 @@ const Ordinazione = ({ element }) => {
                  console.log(res);
                     if(res.data.ritirato!=undefined){//risposta corretta
                         setPronto(true);
+                        element.pronto=true;
                         console.log(pronto);
                     }
              }catch(e){
